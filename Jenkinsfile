@@ -2,13 +2,13 @@
 
     // Defining a dictionary with paths as keys and parameters as values to run dotnet build command
     def dotnetBuildParams = [
-		"\\DemoCICDSolution\\DemoCICDSolution.csproj": "/p:configuration=Release"
+		"DemoCICDSolution/DemoCICDSolution.csproj": "/p:configuration=Release"
     ]
 
 	
 	// Defining a dictionary with paths as keys and parameters as values to run dotnet test command 	
 	def dotnetTestParams = [
-	    "\\DemoUnitTestPipeline\\DemoUnitTestPipeline.csproj": "--configuration Release"
+	    "/DemoUnitTestPipeline/DemoUnitTestPipeline.csproj": "--configuration Release"
 	]
 
 
