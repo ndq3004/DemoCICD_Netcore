@@ -6,7 +6,7 @@ pipeline {
         stage("build"){
 
             steps {
-                dotnet build
+                dotnet build -c Release
             }
         }
 
