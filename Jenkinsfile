@@ -6,8 +6,8 @@ pipeline {
         stage("build"){
 
             steps {
-                echo $(pwd)
-                dotnet build
+                cd /var/lib/jenkins/workspace/PipelineNetcore1/
+                sudo dotnet build
             }
         }
 
