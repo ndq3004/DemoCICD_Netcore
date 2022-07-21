@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoCICDSolution", "DemoCICDSolution\DemoCICDSolution.csproj", "{78BCDE3B-F152-48F3-ADE5-B87129A42818}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoUnitTestPipeline", "DemoUnitTestPipeline\DemoUnitTestPipeline.csproj", "{CFAE9ABE-F0BE-4F02-9B7C-928C9D9DC6BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{78BCDE3B-F152-48F3-ADE5-B87129A42818}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78BCDE3B-F152-48F3-ADE5-B87129A42818}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78BCDE3B-F152-48F3-ADE5-B87129A42818}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFAE9ABE-F0BE-4F02-9B7C-928C9D9DC6BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFAE9ABE-F0BE-4F02-9B7C-928C9D9DC6BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFAE9ABE-F0BE-4F02-9B7C-928C9D9DC6BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFAE9ABE-F0BE-4F02-9B7C-928C9D9DC6BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
