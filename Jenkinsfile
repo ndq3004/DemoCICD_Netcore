@@ -6,7 +6,7 @@ pipeline {
         stage("build"){
 
             steps {
-                echo "build"
+                dotnet build -c Release
             }
         }
 
