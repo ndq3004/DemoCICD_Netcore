@@ -13,7 +13,15 @@ namespace DemoUnitTestPipeline
         {
             var controller = new WeatherForecastController();
             var result = controller.Get();
-            Assert.IsNull(result);
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void TestMethod2()
+        {
+            var controller = new WeatherForecastController();
+            var result = controller.Get();
+            Assert.IsNotNull(result);
         }
     }
 }
