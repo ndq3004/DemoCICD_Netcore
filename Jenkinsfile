@@ -35,7 +35,9 @@ pipeline {
         }
 
         stage("deploy"){
-
+		agent {
+			label 'docker-agent'
+		}
             steps {
 		    echo "start deploy"
 		    sh "ls"
