@@ -2,7 +2,7 @@
 
     // Defining a dictionary with paths as keys and parameters as values to run dotnet build command
     def dotnetBuildParams = [
-		"DemoCICDSolution/DemoCICDSolution.csproj": "/p:configuration=Release"
+		"DemoCICDSolution/DemoCICDSolution.csproj": "-c Release -o site"
     ]
 
 	
@@ -20,7 +20,7 @@ pipeline {
         stage("build"){
 
             steps {
-                dotnet("build",dotnetBuildParams)
+                dotnet("publish",dotnetBuildParams)
             }
         }
 
