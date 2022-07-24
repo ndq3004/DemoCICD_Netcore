@@ -37,7 +37,8 @@ pipeline {
 
             steps {
 		    echo "start deploy"
-                sh label: '', script: '''cd /home/ec2-user/workspace/PipelineNetcore1/DemoCICDSolution
+		    ls
+                sh label: 'jenkins-slave', script: '''cd /home/ec2-user/workspace/PipelineNetcore1/DemoCICDSolution
 					sudo docker build -t imagetest .
 					sudo docker container run -itd --name webserver -p 8080 webimage'''
             }
