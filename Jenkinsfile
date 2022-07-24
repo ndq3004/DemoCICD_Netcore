@@ -20,7 +20,7 @@ pipeline {
 
     stages {
         stage("build"){
-
+	    
             steps {
                 dotnet("build",dotnetBuildParams)
             }
@@ -36,7 +36,9 @@ pipeline {
 
         stage("deploy"){
 		agent {
-			label 'docker-agent'
+			docker {
+				image 'mcr.microsoft.com/dotnet/aspnet:5.0'
+			}
 		}
             steps {
 		    echo "start deploy"
