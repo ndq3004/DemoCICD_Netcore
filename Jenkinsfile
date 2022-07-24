@@ -41,8 +41,9 @@ pipeline {
 		    sh "ls"
                 	sh label: '', script: '''cd /home/ec2-user/workspace/PipelineNetcore1/DemoCICDSolution
 					ls
+					sudo docker rmi imagetest
 					sudo docker build -t imagetest .
-					sudo docker container run -itd --name webserver -p 8080 webimage'''
+					sudo docker container run -itd --name webserver -p 8080 imagetest'''
             }
         }
     }
