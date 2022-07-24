@@ -11,6 +11,8 @@
 	    "/DemoUnitTestPipeline/DemoUnitTestPipeline.csproj": "--configuration Release"
 	]
 
+    def dockerDeployParams = []
+
 
 pipeline {
 
@@ -34,10 +36,7 @@ pipeline {
         stage("deploy"){
 
             steps {
-                dir("DemoCICDSolution"){
-                    sh "docker build -t aspnetapp ."
-                    sh "docker run -d -p 8080:80 --name myapp aspnetapp"
-                }
+                docker("build",dockerDeployParams)
             }
         }
     }
