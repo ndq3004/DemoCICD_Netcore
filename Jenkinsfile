@@ -29,24 +29,23 @@ pipeline {
         stage("test"){
 
             steps {
-                //dotnet("test",dotnetTestParams) 
-		    echo "test"
+                dotnet("test",dotnetTestParams) 
             }
         }
 
         stage("deploy"){
-		agent { node { label 'jenkins-slave'} }
-            steps {
-		    dir("DemoCICDSolution"){
-		    	echo "start deploy"
-		    	sh "ls"
-                	sh label: '', script: ''' cd /home/ec2-user/workspace/DockerFolder/PipelineNetcore1/DemoCICDSolution
-					ls
-					sudo docker rmi -f imagetest
-					sudo docker container rm -f webserver
-					sudo docker build -t imagetest .
-					sudo docker container run -itd --name webserver -p 8080:80 imagetest'''
-		    }
+		    agent { node { label 'jenkins-slave'} }
+                steps {
+		        dir("DemoCICDSolution"){
+		    	    echo "start deploy"
+		    	    sh "ls"
+                	    sh label: '', script: ''' cd /home/ec2-user/workspace/DockerFolder/PipelineNetcore1/DemoCICDSolution
+					    ls
+					    sudo docker rmi -f imagetest
+					    sudo docker container rm -f webserver
+					    sudo docker build -t imagetest .
+					    sudo docker container run -itd --name webserver -p 8080:80 imagetest'''
+		        }
 		    
             }
         }
