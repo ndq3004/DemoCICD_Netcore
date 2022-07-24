@@ -1,42 +1,26 @@
-@Library('shared-library') _
-
-    // Defining a dictionary with paths as keys and parameters as values to run dotnet build command
-    def dotnetBuildParams = [
-		"DemoCICDSolution/DemoCICDSolution.csproj": "/p:configuration=Release"
-    ]
-
-	
-	// Defining a dictionary with paths as keys and parameters as values to run dotnet test command 	
-	def dotnetTestParams = [
-	    "/DemoUnitTestPipeline/DemoUnitTestPipeline.csproj": "--configuration Release"
-	]
-
-    def dockerDeployParams = []
-
-
 pipeline {
 
-    agent { node { label 'jenkins-slave'} }
+    agent any
 
     stages {
         stage("build"){
 
             steps {
-                dotnet("build",dotnetBuildParams)
+                echo "build"
             }
         }
 
         stage("test"){
 
             steps {
-                dotnet("test",dotnetTestParams) 
+                echo "test"
             }
         }
 
         stage("deploy"){
 
             steps {
-                docker("build",dockerDeployParams)
+                echo "deploy"
             }
         }
     }
