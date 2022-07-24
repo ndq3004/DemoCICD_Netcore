@@ -35,11 +35,7 @@ pipeline {
         }
 
         stage("deploy"){
-		agent {
-			docker {
-				image 'mcr.microsoft.com/dotnet/aspnet:5.0'
-			}
-		}
+		agent any
             steps {
 		    echo "start deploy"
 		    sh "ls"
