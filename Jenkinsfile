@@ -42,6 +42,7 @@ pipeline {
                 	sh label: '', script: '''cd /home/ec2-user/workspace/PipelineNetcore1/DemoCICDSolution
 					ls
 					sudo docker rmi imagetest
+					sudo docker container rm -f webserver
 					sudo docker build -t imagetest .
 					sudo docker container run -itd --name webserver -p 8080 imagetest'''
             }
