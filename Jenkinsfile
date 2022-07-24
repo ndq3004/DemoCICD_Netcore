@@ -37,14 +37,17 @@ pipeline {
         stage("deploy"){
 		agent { node { label 'jenkins-slave'} }
             steps {
-		    echo "start deploy"
-		    sh "ls"
+		    dir("DemoCICDSolution"){
+		    	echo "start deploy"
+		    	sh "ls"
                 	sh label: '', script: '''cd /home/ec2-user/workspace/PipelineNetcore1/DemoCICDSolution
 					ls
 					sudo docker rmi -f imagetest
 					sudo docker container rm -f webserver
 					sudo docker build -t imagetest .
 					sudo docker container run -itd --name webserver -p 8080:80 imagetest'''
+		    }
+		    
             }
         }
     }
