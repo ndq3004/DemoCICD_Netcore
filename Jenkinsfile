@@ -36,6 +36,7 @@ pipeline {
         stage("deploy"){
 
             steps {
+		    echo "start deploy"
 //                 sh label: '', script: '''rm -rf dockerimg
 // 					mkdir dockerimg
 // 					cd dockerimg
