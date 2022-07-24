@@ -35,11 +35,11 @@ pipeline {
         }
 
         stage("deploy"){
-		agent any
+		agent { node { label 'jenkins-slave'} }
             steps {
 		    echo "start deploy"
 		    sh "ls"
-                	sh label: 'jenkins-slave', script: '''cd /home/ec2-user/workspace/PipelineNetcore1/DemoCICDSolution
+                	sh label: '', script: '''cd /home/ec2-user/workspace/PipelineNetcore1/DemoCICDSolution
 					ls
 					docker build -t imagetest .
 					sudo docker build -t imagetest .
