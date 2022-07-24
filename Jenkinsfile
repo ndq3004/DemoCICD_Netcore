@@ -40,7 +40,7 @@ pipeline {
 		    dir("DemoCICDSolution"){
 		    	echo "start deploy"
 		    	sh "ls"
-                	sh label: '', script: '''cd /home/ec2-user/workspace/PipelineNetcore1/DemoCICDSolution
+                	sh label: '', script: '''
 					ls
 					sudo docker rmi -f imagetest
 					sudo docker container rm -f webserver
