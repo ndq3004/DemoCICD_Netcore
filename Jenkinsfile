@@ -44,7 +44,10 @@ pipeline {
 					    sudo docker rmi -f imagetest
 					    sudo docker container rm -f webserver
 					    sudo docker build -t imagetest .
-					    sudo docker container run -itd --name webserver -p 8080:80 imagetest'''
+					    sudo docker container run -itd --name webserver -p 8080:80 imagetest
+					cat ~/my_password.txt | docker login --username quannguyen3004 --password-stdin
+					sudo docker tag imagetest quannguyen3004/imagetest:latest
+					sudo docker push quannguyen3004/imagetest:latest'''
 		        }
 		    
             }
