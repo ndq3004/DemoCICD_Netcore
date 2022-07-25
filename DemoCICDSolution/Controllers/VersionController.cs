@@ -23,7 +23,7 @@ namespace DemoCICDSolution.Controllers
         [HttpGet(Name = "Version")]
         public string Get()
         {
-            return Configuration["Version"];
+            return $"<h1>Current version is {Configuration["Version"]}</h1>";
         }
     }
 }
