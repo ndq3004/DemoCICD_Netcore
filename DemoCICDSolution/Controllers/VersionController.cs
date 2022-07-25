@@ -21,9 +21,9 @@ namespace DemoCICDSolution.Controllers
         }
 
         [HttpGet(Name = "Version")]
-        public string Get()
+        public ContentResult Get()
         {
-            return $"<h1>Current version is {Configuration["Version"]}</h1>";
+            return base.Content($"<h1>Current version is {Configuration["Version"]}</h1>", "text/html");
         }
     }
 }
